@@ -1119,13 +1119,14 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
 
     .match {
-      background-color: rgba(255, 255, 255, 0.1);;
+      background-color: rgba(255, 255, 255, 0.1);
       border: none;
       border-radius: 0.5rem;
       padding: 0.75rem;
       margin-bottom: 1.5rem;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      min-width: 180px;
     }
 
     .round-title {
@@ -1139,15 +1140,34 @@ h1, h2, h3, h4, h5,
     }
 
     .bracket-wrapper {
-      display: flex;
-      justify-content: center;
+      overflow-x: auto;
+      padding-bottom: 2rem;
     }
 
     .bracket-container {
       display: flex;
+      justify-content: flex-start;
       gap: 2rem;
-      justify-content: center;
-      margin: 0 auto;
-      padding-bottom: 2rem;
       width: fit-content;
+      min-width: 100%;
+    }
+
+
+    .octavos   { margin-top: 18rem; }
+    .cuartos   { margin-top: 31rem; }
+    .semis     { margin-top: 37.5rem; }
+    .final     { margin-top: 40.5rem; }
+
+
+    @media (max-width: 768px) {
+      .bracket-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .octavos,
+      .cuartos,
+      .semis,
+      .final {
+        margin-top: 2rem !important;
+      }
     }
